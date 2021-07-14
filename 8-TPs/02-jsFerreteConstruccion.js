@@ -6,37 +6,55 @@ C.	Para hacer un contrapiso de 1m x 1m se necesitan 2 bolsas de cemento y 3 de c
 
 function Rectangulo () 
 {//declarar variables
-    let largodelterreno;
-    let anchodelterreno;
+    let largoDelterreno;
+    let anchoDelterreno;
+    let perimetro;
+    let totalAlambre;
 //asigno y parseo
-largodelterreno = parseFloat (document.getElementById ("txtIdLargo").value);
-anchodelterreno = parseFloat (document.getElementById ("txtIdAncho").value);
-//muestro operacion ((suma de largo y ancho) *2 y posterior multip por 3) por alert
-alert ("La cantidad de alambre a comprar para el rectangulo es de " + (((largodelterreno+anchodelterreno)*2)*3));
+largoDelterreno = parseFloat (document.getElementById ("txtIdLargo").value);
+anchoDelterreno = parseFloat (document.getElementById ("txtIdAncho").value);
+//operaciones
+perimetro = (largoDelterreno+anchoDelterreno)*2;
+totalAlambre = perimetro*3;
+//muestro con alert
+alert ("La cantidad de alambre a comprar para el rectangulo es de " + totalAlambre);
 
 }
 function Circulo () 
 {//declaro la variable
-    let radiodelterreno;
+    let radioDelterreno;
+    let perimetroDelcirculo;
+    let totalAlambre;
+    const PI = 3.14;
+
 //asignoy parseo
-radiodelterreno = parseFloat (document.getElementById ("txtIdRadio").value);
-//muestro operacion ((3,14*(radio*2))*3)
-alert ("la cantidad de alambre a comprar para el circulo es " + (((3.14*(radiodelterreno*2))*3)));
+radioDelterreno = parseFloat (document.getElementById ("txtIdRadio").value);
+//operaciones
+perimetroDelcirculo = PI*radioDelterreno*2;
+totalAlambre = perimetroDelcirculo*3;
+//muestro con alert concatenando
+alert ("la cantidad de alambre a comprar para el circulo es " + totalAlambre);
 	
 }
 function Materiales () 
 {//declaro variables
-    let largodelterreno;
-    let anchodelterreno;
-    let superficiedelterreno;
-    let bolsasdecemento;
-    let bolsadecal;
+    let largoDelterreno;
+    let anchoDelterreno;
+    let superficieDelterreno;
+    let bolsasDecemento;
+    let bolsaDecal;
+    const CANT_BOL_CEM_POR_1_MTS = 2;
+    const CANT_BOL_CAL_POR_1_MTS = 3;
 //asigno y parseo
-largodelterreno = parseFloat (document.getElementById ("txtIdLargo").value);
-anchodelterreno = parseFloat (document.getElementById ("txtIdAncho").value);
-superficiedelterreno = largodelterreno*anchodelterreno;
-//operaciones y muestro
-alert ("Para hacer un contra piso de 1m x1 m la cantidad de bolsas de cemento necesarias es " + (superficiedelterreno*2) + " y la cantidad de bolsas de cal necesarias es " + (superficiedelterreno*3));
+largoDelterreno = parseFloat (document.getElementById ("txtIdLargo").value);
+anchoDelterreno = parseFloat (document.getElementById ("txtIdAncho").value);
+//operaciones
+superficieDelterreno = largoDelterreno*anchoDelterreno;
+bolsasDecemento = superficieDelterreno*CANT_BOL_CEM_POR_1_MTS;
+bolsaDecal = superficieDelterreno*CANT_BOL_CAL_POR_1_MTS;
+
+//mostrar con alert concatenando
+alert ("Para hacer un contra piso de 1m x1 m la cantidad de bolsas de cemento necesarias es " + bolsasDecemento + " y la cantidad de bolsas de cal necesarias es " + bolsaDecal);
 
 	
 }

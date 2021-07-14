@@ -4,40 +4,53 @@ B.	Ingresar tres precios de productos y mostrar el promedio de los mismos.
 C.	ingresar tres precios de productos  y mostrar precio final (más IVA 21%).
 */
 function Sumar () 
-{//declaro variables
-let preciouno;
-let preciodos;
-let preciotres;
+{//declaro variables y constantes
+let precioUno;
+let precioDos;
+let precioTres;
+let resultado;
 //asigno y parseo
-preciouno = parseFloat (document.getElementById("txtIdPrecioUno").value);
-preciodos = parseFloat (document.getElementById("txtIdPrecioDos").value);
-preciotres = parseFloat (document.getElementById("txtIdPrecioTres").value);
-//mostrar operacion
-alert ("La suma de los tres precios es " + (preciouno+preciodos+preciotres));
+precioUno = parseFloat (document.getElementById("txtIdPrecioUno").value);
+precioDos = parseFloat (document.getElementById("txtIdPrecioDos").value);
+precioTres = parseFloat (document.getElementById("txtIdPrecioTres").value);
+//operacion suma
+resultado = precioUno+precioDos+precioTres;
+//mostrar por alert concatenando
+alert ("La suma de los tres precios es " + resultado);
 }
 function Promedio () 
-{//declaro variables
-let preciouno;
-let preciodos;
-let preciotres;
+{//declaro variables y constantes
+let precioUno;
+let precioDos;
+let precioTres;
+let suma;
+let resultado;
+const PROMEDIO = 3;
 //asigno y parseo
-preciouno = parseFloat (document.getElementById("txtIdPrecioUno").value);
-preciodos = parseFloat (document.getElementById("txtIdPrecioDos").value);
-preciotres = parseFloat (document.getElementById("txtIdPrecioTres").value);
-//mostrar operacion
-alert ("El promedio de los tres precios es " + ((preciouno+preciodos+preciotres)/3));
+precioUno = parseFloat (document.getElementById("txtIdPrecioUno").value);
+precioDos = parseFloat (document.getElementById("txtIdPrecioDos").value);
+precioTres = parseFloat (document.getElementById("txtIdPrecioTres").value);
+//operacion promedio
+suma
+resultado = (precioUno+precioDos+precioTres)/PROMEDIO;
+//muestro por alert concatenando
+alert ("El promedio de los tres precios es " + resultado);
 	
 }
 function PrecioFinal () 
-{//declaro variables
-let preciouno;
-let preciodos;
-let preciotres;
+{//declaro variables y constantes
+let precioUno;
+let precioDos;
+let precioTres;
+let resultado;
+const IVA = 21/100;
 //asigno y parseo
-preciouno = parseFloat (document.getElementById("txtIdPrecioUno").value);
-preciodos = parseFloat (document.getElementById("txtIdPrecioDos").value);
-preciotres = parseFloat (document.getElementById("txtIdPrecioTres").value);
-//mostrar operacion
-alert ("La suma de los tres precios más Iva del 21% es " + (preciouno+preciodos+preciotres+((preciouno+preciodos+preciotres)*21/100)));
+precioUno = parseFloat (document.getElementById("txtIdPrecioUno").value);
+precioDos = parseFloat (document.getElementById("txtIdPrecioDos").value);
+precioTres = parseFloat (document.getElementById("txtIdPrecioTres").value);
+//operacion suma mas el 21%
+resultado = (precioUno+precioDos+precioTres)*IVA;
+//muestro por alert concatenando
+alert ("La suma de los tres precios más Iva del 21% es " + resultado);
 	
 }
