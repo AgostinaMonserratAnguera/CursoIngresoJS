@@ -42,19 +42,19 @@ function Materiales ()
     let anchoDelterreno;
     let superficieDelterreno;
     let bolsasDecemento;
-    let bolsaDecal;
+    let bolsasDecal;
     const CANT_BOL_CEM_POR_1_MTS = 2;
     const CANT_BOL_CAL_POR_1_MTS = 3;
 //asigno y parseo
-largoDelterreno = parseFloat (document.getElementById ("txtIdLargo").value);
-anchoDelterreno = parseFloat (document.getElementById ("txtIdAncho").value);
+largoDelterreno = parseInt (document.getElementById ("txtIdLargo").value);
+anchoDelterreno = parseInt (document.getElementById ("txtIdAncho").value);
 //operaciones
 superficieDelterreno = largoDelterreno*anchoDelterreno;
 bolsasDecemento = superficieDelterreno*CANT_BOL_CEM_POR_1_MTS;
-bolsaDecal = superficieDelterreno*CANT_BOL_CAL_POR_1_MTS;
+bolsasDecal = superficieDelterreno*CANT_BOL_CAL_POR_1_MTS;
 
 //mostrar con alert concatenando
-alert ("Para hacer un contra piso de 1m x1 m la cantidad de bolsas de cemento necesarias es " + bolsasDecemento + " y la cantidad de bolsas de cal necesarias es " + bolsaDecal);
+alert ("Para hacer un contra piso de 1m x1 m la cantidad de bolsas de cemento necesarias es " + bolsasDecemento + " y la cantidad de bolsas de cal necesarias es " + bolsasDecal);
 
 	
 }
