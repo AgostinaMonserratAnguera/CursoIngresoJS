@@ -12,13 +12,13 @@ function CalcularPrecio ()
 {//declaro variables y constantes
 const PRECIO_UNITARIO_LAMP=35;
 let cantidadLamparas;
-let precioTotal;
-let precioDescuento;
+let precioSinDescuento;
+let precioConDescuento;
 let marca;
 const PORCEN_INGRESOS_BRUTOS=10/100;
 let precioFinal;
 let ingresosBrutos;
-
+let porcentaje;
 
 //asigno y parseo
   cantidadLamparas = parseInt(document.getElementById("txtIdCantidad").value);
@@ -26,45 +26,56 @@ let ingresosBrutos;
 
 
 //operacion
-  precioTotal = cantidadLamparas*PRECIO_UNITARIO_LAMP;
-  if (cantidadLamparas>=6)
-   {
-     precioDescuento = precioTotal-precioTotal*50/100;
-   }
-
-  if (cantidadLamparas==5)
-    { if (marca=="ArgentinaLuz")
-       { precioDescuento = precioTotal-precioTotal*40/100;
-       }
-     else 
-       { precioDescuento = precioTotal-precioTotal*30/100;
-       }
-    }
-  if (cantidadLamparas==4)
-     { if (marca=="ArgentinaLuz" || marca=="FelipeLamparas") 
-      { precioDescuento = precioTotal-precioTotal*25/100;
-      }
-       else
-       {precioDescuento = precioTotal-precioTotal*20/100;
-       }
-     }
-  if (cantidadLamparas==3)
-    {if (marca=="ArgentinaLuz") 
-     {precioDescuento = precioTotal-precioTotal*15/100;
-     }
-     else if (marca=="FelipeLamparas")
-      {precioDescuento = precioTotal-precioTotal*10/100;
-      }
-      else
-      {precioDescuento = precioTotal-precioTotal*5/100;
-      } 
-    }
-
-    document.getElementById("txtIdprecioDescuento").value = precioDescuento;
+  precioSinDescuento = cantidadLamparas*PRECIO_UNITARIO_LAMP;
+   switch (cantidadLamparas)
+   { case 1:
+     case 2:
+            porcentaje=0;
+            break;
+     case 5:
+           switch (marca)
+           { case "ArgentinaLuz":
+                                porcentaje=40/100;
+                                break;
+             default:
+                       porcentaje=30/100;
+                       break;
+           }
+            break;
+     case 4:
+           switch (marca) 
+           { case "ArgentinaLuz":
+             case "FelipeLamparas":
+                                   porcentaje=25/100;
+                                  break;
+            default:
+                    porcentaje=20/100;
+                    break;
+          }
+            break;
+  case 3:
+        switch (marca)
+         {case "ArgentinaLuz": 
+                             porcentaje=15/100;
+                             break;
+          case "FelipeLamparas":
+                               porcentaje=10/100
+                               break;
+        default:
+                porcentaje=5/100;
+                break;
+         } 
+       break;
+  default:
+          porcentaje=50/100;
+          break;
+  }
+    precioConDescuento = precioSinDescuento-precioSinDescuento*porcentaje;
+    document.getElementById("txtIdprecioDescuento").value = precioConDescuento;
  
-    if (precioDescuento>120)
-   { ingresosBrutos = precioDescuento*PORCEN_INGRESOS_BRUTOS;
-     precioFinal = precioDescuento+ingresosBrutos;
+    if (precioConDescuento>120)
+   { ingresosBrutos = precioConDescuento*PORCEN_INGRESOS_BRUTOS;
+     precioFinal = precioConDescuento+ingresosBrutos;
     alert("Usted pago " + ingresosBrutos + " de IIBB.");
     document.getElementById('txtIdprecioDescuento').value = precioFinal;
     
