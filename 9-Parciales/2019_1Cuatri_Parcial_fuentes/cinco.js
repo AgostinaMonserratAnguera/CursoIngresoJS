@@ -27,6 +27,9 @@ function mostrar()
                 case "debito":
                     porcentajeFormaDePago = 10/100; 
                     break;
+                default:
+                    porcentajeFormaDePago=0;
+                    break;
             }
             precioFinal = precioPorDias-precioPorDias*(porcentajeFormaDePago+PORC_AME);
             break;
@@ -35,6 +38,9 @@ function mostrar()
             {
                 case "mercado pago":
                     porcentajeFormaDePago = 15/100; 
+                    break;
+                default:
+                    porcentajeFormaDePago=0;
                     break;
             }
             precioFinal = precioPorDias-precioPorDias*(porcentajeFormaDePago+PORC_AFR);
@@ -52,7 +58,7 @@ function mostrar()
                     porcentajeFormaDePago = 5/100;
                     break;       
             }
-            precioFinal = precioPorDias+precioPorDias*(porcentajeFormaDePago+PORC_EUR);
+            precioFinal = precioPorDias-precioPorDias*PORC_EUR+precioPorDias*porcentajeFormaDePago;
             break;
         default:
             precioFinal = precioPorDias+precioPorDias*20/100;

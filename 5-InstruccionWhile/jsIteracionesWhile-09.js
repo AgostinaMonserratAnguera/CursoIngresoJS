@@ -21,9 +21,10 @@ function mostrar()
 		}
 		if (numeroIngresado>numeroMaximo || banderaDelPrimero==0)
 		{
-			numeroMaximo = numeroIngresado	
+			numeroMaximo = numeroIngresado;
+			banderaDelPrimero=1;
 		}
-		banderaDelPrimero=1;
+
 		respuesta=prompt("desea continuar? presione 'si' o 'no'");
 	}
 	document.getElementById("txtIdMaximo").value=numeroMaximo;
