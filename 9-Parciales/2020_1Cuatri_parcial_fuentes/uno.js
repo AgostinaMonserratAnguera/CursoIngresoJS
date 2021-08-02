@@ -15,9 +15,9 @@ function mostrar()
     let acumuladorJabon=0;
     let acumuladorAlcohol=0;
     let promTipo;
-    let precioMaxAlcohol=100;
     let precioMinAlcohol=300;
     let tipoMas;
+    let alcoholBarato="Usted no ingreso alcoholes a la lista de productos";
 
     for (let i=0; i<5; i++)
     {
@@ -65,6 +65,7 @@ function mostrar()
                 break;
              
         }
+    }    
       if (acumuladorAlcohol>acumuladorBarbijo && acumuladorAlcohol>acumuladorJabon)
       {
         tipoMas = "alcohol";
@@ -80,12 +81,15 @@ function mostrar()
           tipoMas = "jabon";
           promTipo = acumuladorJabon/contadorJabon;
       }
-
+      if (contadorAlcoholBarato!=0)
+      {
+          alcoholBarato = "Cantidad de unidades y fabricante del alchol mas barato=" + contadorAlcoholBarato + " y " + fabricanteAlcoholBarato; 
+      }
    
-    }
+    
 
    document.write(
-        "Cantidad de unidades y fabricante del alchol mas barato=" + contadorAlcoholBarato + " y " + fabricanteAlcoholBarato + "<br>" + 
+        alcoholBarato + "<br>" + 
         "Tipo con mas unidades y promedio= " + tipoMas + " y " + promTipo + "<br>" + 
         "Suma de jabones=" + acumuladorJabon);
 
